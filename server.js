@@ -308,7 +308,7 @@ app.post('/api/checkout/create-order', authMiddleware, async (req, res) => {
     const order = await razorpay.orders.create({
       amount: course.price * 100, // Razorpay expects paise
       currency: 'INR',
-      receipt: `receipt_${courseId}_${Date.now()}`,
+      receipt: `rcpt_${Date.now()}`.slice(0, 40),
     });
     res.json({ orderId: order.id, amount: order.amount, currency: order.currency, keyId: process.env.RAZORPAY_KEY_ID, course });
   } catch (e) {
