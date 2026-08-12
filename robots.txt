@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://byteforce-p130.onrender.com/sitemap.xml
