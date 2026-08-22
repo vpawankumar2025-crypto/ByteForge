@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ByteForge — Coding Courses & Internships</title>
+<meta name="description" content="Project-based coding courses and internships with verifiable certificates and real offer letters. Learn AI, web development, cybersecurity, cloud computing, and more — build real projects, not just watch videos.">
+<meta name="keywords" content="online coding courses, internship certificate, verified internship, learn programming, AI course, web development internship, cybersecurity course, coding bootcamp India">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://byteforce-p130.onrender.com/">
+<meta property="og:title" content="ByteForge — Coding Courses & Internships">
+<meta property="og:description" content="Project-based coding courses and internships with verifiable certificates and real offer letters.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://byteforce-p130.onrender.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ByteForge — Coding Courses & Internships">
+<meta name="twitter:description" content="Project-based coding courses and internships with verifiable certificates and real offer letters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<style>
+  :root{
+    --ink:#0F1219; --surface:#171B24; --surface-alt:#1E2430; --line:#2A3140;
+    --text:#E8EAF0; --muted:#8892A6; --amber:#F5A623; --teal:#3FDDC0; --rose:#FF6B81;
+    --mono:'JetBrains Mono', monospace; --sans:'IBM Plex Sans', sans-serif;
+  }
+  html[data-theme="light"]{
+    --ink:#F7F8FA; --surface:#FFFFFF; --surface-alt:#EEF0F4; --line:#DDE1E8;
+    --text:#161A22; --muted:#5B6472; --amber:#C97A00; --teal:#0E9C8C; --rose:#D03A54;
+  }
+  html{transition:background .2s ease;}
+  body{transition:background .2s ease, color .2s ease;}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--ink); color:var(--text); font-family:var(--sans); scroll-behavior:smooth;}
+  body{-webkit-font-smoothing:antialiased; min-height:100vh;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer; border:none; background:transparent;}
+  input,select{font-family:inherit;}
+  ::selection{background:var(--amber); color:var(--ink);}
+
+  /* ---------- Navbar ---------- */
+  .tabbar{position:sticky; top:0; z-index:100; display:flex; align-items:center; background:var(--surface); border-bottom:1px solid var(--line); padding:0 16px; gap:4px; flex-wrap:wrap;}
+  .brand{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-weight:700; font-size:15px; padding:14px 14px 14px 4px; white-space:nowrap;}
+  .brand .dot{width:9px; height:9px; border-radius:50%; background:var(--teal);}
+  .navsearch{display:flex; align-items:center; gap:6px; background:var(--ink); border:1px solid var(--line); border-radius:6px; padding:7px 10px; margin:8px 4px; min-width:150px; flex:1; max-width:280px;}
+  .navsearch input{background:transparent; border:none; outline:none; color:var(--text); font-size:13px; width:100%;}
+  .navsearch input::placeholder{color:var(--muted);}
+  .navsearch svg{flex-shrink:0; opacity:.6;}
+  .tabs{display:flex; align-items:stretch; flex-wrap:wrap;}
+  .tab{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12.5px; color:var(--muted); padding:14px 12px; border-right:1px solid var(--line); background:transparent; white-space:nowrap; transition:color .15s, background .15s;}
+  .tab .dot{width:7px; height:7px; border-radius:50%; background:var(--muted);}
+  .tab:hover{color:var(--text); background:var(--surface-alt);}
+  .tab.active{color:var(--text); background:var(--ink); border-bottom:2px solid var(--amber); margin-bottom:-1px;}
+  .tab.active .dot{background:var(--amber);}
+  .tab-spacer{flex:1;}
+  @media (max-width:640px){
+    .tabbar{padding:0 10px;}
+    .brand{padding:10px 8px 10px 2px; font-size:13.5px;}
+    .navsearch{min-width:120px; max-width:none; flex:1 1 100%; order:3; margin:0 0 8px;}
+    .tab{padding:10px 9px; font-size:11.5px;}
+    .tab-spacer{flex:0 0 100%; height:0; order:10;}
+  }
+  .tab-cta{margin:8px 4px; padding:9px 16px; border-radius:6px; background:var(--amber); color:var(--ink); font-weight:700; font-size:13px; font-family:var(--mono);}
+  .tab-cta:hover{filter:brightness(1.08);}
+  .tab-ghost-cta{margin:8px 0; padding:9px 14px; border-radius:6px; border:1px solid var(--line); color:var(--text); font-weight:600; font-size:13px; font-family:var(--mono);}
+  .tab-ghost-cta:hover{border-color:var(--teal); color:var(--teal);}
+  .user-chip{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:13px; color:var(--teal); padding:8px 10px;}
+
+  .more-wrap{position:relative;}
+  .more-menu{display:none; position:absolute; top:100%; right:0; background:var(--surface-alt); border:1px solid var(--line); border-radius:8px; padding:6px; min-width:180px; box-shadow:0 20px 40px -20px rgba(0,0,0,.7); z-index:200;}
+  @media (max-width:640px){
+    .more-menu{right:auto; left:50%; transform:translateX(-50%); min-width:160px;}
+  }
+  .more-menu.open{display:block;}
+  .more-menu button{display:block; width:100%; text-align:left; padding:10px 12px; border-radius:6px; font-family:var(--mono); font-size:12.5px; color:var(--text);}
+  .more-menu button:hover{background:var(--ink); color:var(--teal);}
+
+  main{max-width:1120px; margin:0 auto; padding:48px 24px 96px;}
+  .view{display:none; animation:fadein .35s ease;}
+  .view.active{display:block;}
+  @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  .eyebrow{font-family:var(--mono); font-size:12px; color:var(--muted); letter-spacing:.04em; margin-bottom:10px;}
+  .eyebrow::before{content:'// '; color:var(--teal);}
+  h1{font-family:var(--mono); font-size:clamp(30px,5vw,48px); font-weight:700; line-height:1.15; letter-spacing:-.01em;}
+  h2{font-family:var(--mono); font-size:clamp(22px,3vw,28px); font-weight:700; margin-bottom:20px;}
+  h3{font-family:var(--mono); font-size:17px; font-weight:700;}
+  p{color:var(--muted); line-height:1.65; font-size:15px;}
+
+  .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; padding:24px 0 72px;}
+  @media (max-width:860px){.hero{grid-template-columns:1fr;}}
+  .hero-copy p{margin:18px 0 28px; max-width:460px; font-size:16px;}
+  .hero-actions{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{padding:13px 22px; border-radius:6px; font-weight:700; font-size:14px; display:inline-flex; align-items:center; gap:8px; transition:transform .12s, filter .12s;}
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:var(--amber); color:var(--ink);}
+  .btn-primary:hover{filter:brightness(1.08);}
+  .btn-primary:disabled{opacity:.6; cursor:not-allowed;}
+  .btn-ghost{background:transparent; border:1px solid var(--line); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--teal); color:var(--teal);}
+  .btn-block{width:100%; justify-content:center;}
+
+  .editor{background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 30px 60px -30px rgba(0,0,0,.6);}
+  .editor-bar{display:flex; align-items:center; gap:6px; padding:10px 14px; background:var(--surface-alt); border-bottom:1px solid var(--line);}
+  .editor-bar span{width:10px; height:10px; border-radius:50%; display:inline-block;}
+  .editor-bar .r{background:#FF6157;} .editor-bar .y{background:#FFBD2E;} .editor-bar .g{background:#28C840;}
+  .editor-bar .fname{margin-left:10px; font-family:var(--mono); font-size:12px; color:var(--muted);}
+  .editor-body{padding:20px 22px; font-family:var(--mono); font-size:13.5px; line-height:1.9;}
+  .editor-body .ln{color:#4A5468; display:inline-block; width:22px; user-select:none;}
+  .kw{color:var(--rose);} .fn{color:var(--teal);} .str{color:var(--amber);} .cm{color:#5B6478;}
+  .code-line{opacity:0; animation:reveal .4s ease forwards;}
+  .code-line:nth-child(1){animation-delay:.05s;} .code-line:nth-child(2){animation-delay:.2s;}
+  .code-line:nth-child(3){animation-delay:.35s;} .code-line:nth-child(4){animation-delay:.5s;}
+  .code-line:nth-child(5){animation-delay:.65s;} .code-line:nth-child(6){animation-delay:.8s;}
+  @keyframes reveal{to{opacity:1;}}
+  .cursor{display:inline-block; width:7px; height:15px; background:var(--teal); vertical-align:middle; animation:blink 1s step-end infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  .trust-strip{display:flex; gap:28px; flex-wrap:wrap; align-items:center; padding:22px 0; margin:8px 0 12px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .trust-item{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px; color:var(--muted);}
+  .trust-item svg{color:var(--teal); flex-shrink:0;}
+
+  .stats{display:flex; gap:36px; margin-top:36px; flex-wrap:wrap;}
+  .stat b{font-family:var(--mono); font-size:22px; display:block; color:var(--text);}
+  .stat span{font-size:12.5px; color:var(--muted);}
+
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:8px; gap:12px; flex-wrap:wrap;}
+  .section-head a{font-family:var(--mono); font-size:12.5px; color:var(--teal);}
+  .section-head a:hover{text-decoration:underline;}
+
+  .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:22px;}
+  .filters select, .filters input[type=text]{background:var(--surface); border:1px solid var(--line); color:var(--text); padding:9px 12px; border-radius:6px; font-size:13px; font-family:var(--mono);}
+  .filters input[type=text]{min-width:200px; flex:1;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; margin-top:8px;}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px; display:flex; flex-direction:column; gap:12px; transition:border-color .15s, transform .15s; cursor:pointer;}
+  .card:hover{border-color:var(--teal); transform:translateY(-3px);}
+  .card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+  .level-tag{font-family:var(--mono); font-size:10.5px; padding:3px 8px; border-radius:4px; border:1px solid var(--line); color:var(--muted); white-space:nowrap;}
+  .type-tag{font-family:var(--mono); font-size:10px; padding:2px 7px; border-radius:4px; background:rgba(63,221,192,.12); color:var(--teal); text-transform:uppercase; letter-spacing:.03em;}
+  .badges{display:flex; gap:6px; flex-wrap:wrap; margin:4px 0;}
+  .badge{font-family:var(--mono); font-size:11px; background:var(--surface-alt); color:var(--teal); padding:3px 8px; border-radius:4px;}
+  .card-foot{display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:10px; border-top:1px solid var(--line);}
+  .price{font-family:var(--mono); font-weight:700; color:var(--text);}
+  .price small{color:var(--muted); font-weight:400; text-decoration:line-through; margin-right:6px;}
+  .btn-sm{padding:9px 14px; border-radius:6px; font-size:13px; font-weight:700; background:var(--amber); color:var(--ink);}
+  .btn-sm:hover{filter:brightness(1.08);}
+  .load-more-wrap{text-align:center; margin-top:28px;}
+
+  .panel{max-width:420px; margin:0 auto; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:32px;}
+  .panel-wide{max-width:560px;}
+  .prompt{font-family:var(--mono); font-size:13px; color:var(--teal); margin-bottom:6px;}
+  .prompt::before{content:'$ ';color:var(--muted);}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-family:var(--mono); font-size:12px; color:var(--muted); margin-bottom:6px;}
+  .field input, .field select, .field textarea{width:100%; padding:11px 12px; border-radius:6px; background:var(--ink); border:1px solid var(--line); color:var(--text); font-size:14px;}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--teal);}
+  .field input[type=date]{color-scheme:dark;}
+  .field input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1); cursor:pointer; opacity:.8;}
+  .field input[type=date]::-webkit-calendar-picker-indicator:hover{opacity:1;}
+  .field small{display:block; margin-top:5px; color:var(--muted); font-size:11.5px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  @media (max-width:520px){.field-row{grid-template-columns:1fr;}}
+  .form-note{font-size:12.5px; color:var(--muted); margin-top:14px; text-align:center;}
+  .form-note a{color:var(--teal);}
+  .form-note a:hover{text-decoration:underline;}
+  .alert{font-family:var(--mono); font-size:12.5px; padding:10px 12px; border-radius:6px; margin-bottom:16px; border:1px solid;}
+  .alert-error{color:var(--rose); border-color:var(--rose); background:rgba(255,107,129,.08);}
+  .alert-ok{color:var(--teal); border-color:var(--teal); background:rgba(63,221,192,.08);}
+  .alert-info{color:var(--muted); border-color:var(--line); background:var(--surface-alt);}
+
+  .dash-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; flex-wrap:wrap; gap:12px;}
+  .stat-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:14px; margin-bottom:32px;}
+  .stat-card{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:16px 18px;}
+  .stat-card b{font-family:var(--mono); font-size:24px; display:block; color:var(--teal);}
+  .stat-card span{font-size:12px; color:var(--muted);}
+  .enrolled-row{display:flex; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-bottom:12px; cursor:pointer; transition:border-color .15s;}
+  .enrolled-row:hover{border-color:var(--teal);}
+  .enrolled-row .type-tag{flex-shrink:0;}
+  .progress-bar{flex:1; height:6px; background:var(--surface-alt); border-radius:3px; overflow:hidden;}
+  .progress-fill{height:100%; background:var(--teal);}
+  .status-pills{display:flex; gap:6px; margin-top:8px; flex-wrap:wrap;}
+  .pill{font-family:var(--mono); font-size:10.5px; padding:3px 8px; border-radius:20px; border:1px solid var(--line); color:var(--muted);}
+  .pill.done{border-color:var(--teal); color:var(--teal);}
+  .empty{border:1px dashed var(--line); border-radius:10px; padding:40px; text-align:center; color:var(--muted); font-family:var(--mono); font-size:13px;}
+
+  .checkout-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  @media (max-width:760px){.checkout-grid{grid-template-columns:1fr;}}
+  .order-summary{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:24px; height:fit-content;}
+  .order-row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line); font-size:14px;}
+  .order-row.total{border-bottom:none; font-weight:700; font-family:var(--mono); color:var(--text);}
+  .success-box{text-align:center; padding:40px 20px;}
+  .success-box .check{width:56px; height:56px; border-radius:50%; background:rgba(63,221,192,.12); color:var(--teal); display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 18px;}
+
+  /* item detail */
+  .item-head{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; margin-bottom:28px;}
+  .curriculum-week{background:var(--surface); border:1px solid var(--line); border-radius:10px; margin-bottom:12px; overflow:hidden;}
+  .curriculum-week summary{padding:16px 18px; cursor:pointer; font-family:var(--mono); font-weight:700; font-size:13.5px; list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  .curriculum-week summary::-webkit-details-marker{display:none;}
+  .curriculum-week summary::after{content:'+'; color:var(--muted); font-size:18px;}
+  .curriculum-week[open] summary::after{content:'−';}
+  .curriculum-week ul{list-style:none; padding:0 18px 16px;}
+  .curriculum-week li{padding:8px 0 8px 20px; border-top:1px solid var(--line); font-size:13.5px; color:var(--muted); position:relative;}
+  .curriculum-week li::before{content:'▸'; position:absolute; left:0; color:var(--teal); font-size:11px;}
+
+  /* learn / viewer */
+  .learn-layout{display:grid; grid-template-columns:280px 1fr; gap:24px; align-items:start;}
+  @media (max-width:860px){
+    .learn-layout{grid-template-columns:1fr;}
+    .learn-sidebar{position:static; max-height:none;}
+  }
+  .learn-sidebar{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:20px; position:sticky; top:80px;}
+  .learn-progress-label{font-family:var(--mono); font-size:13px; margin-bottom:8px;}
+  .learn-week-item{display:flex; align-items:center; gap:10px; padding:10px 6px; border-radius:6px; cursor:pointer; font-size:13.5px; margin-bottom:2px;}
+  .learn-week-item:hover{background:var(--surface-alt);}
+  .learn-week-item.active{background:var(--surface-alt); color:var(--teal); font-weight:600;}
+  .learn-check{width:16px; height:16px; border-radius:50%; border:2px solid var(--line); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:10px;}
+  .learn-check.done{border-color:var(--teal); background:var(--teal); color:var(--ink);}
+  .learn-milestone{display:flex; align-items:center; gap:10px; padding:12px 6px; border-radius:6px; cursor:pointer; font-size:13px; margin-top:6px; border-top:1px solid var(--line); font-family:var(--mono);}
+  .learn-milestone:hover{color:var(--teal);}
+  .learn-main{background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .video-placeholder{background:#000; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; color:var(--muted); font-family:var(--mono); font-size:13px; text-align:center; padding:20px;}
+  .video-placeholder .play-icon{width:60px; height:60px; border-radius:50%; background:rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; font-size:22px; color:#fff;}
+  .lesson-list-view{padding:24px;}
+  .lesson-list-view h3{margin-bottom:16px;}
+  .lesson-item{display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:8px; border:1px solid var(--line); margin-bottom:8px;}
+  .lesson-item.done{border-color:var(--teal);}
+  .lesson-item span{flex:1; font-size:13.5px;}
+  .lesson-mark-btn{font-family:var(--mono); font-size:11px; padding:6px 10px; border-radius:5px; border:1px solid var(--line); color:var(--muted);}
+  .lesson-mark-btn.done{border-color:var(--teal); color:var(--teal);}
+  .learn-footer-nav{display:flex; justify-content:space-between; align-items:center; padding:18px 24px; border-top:1px solid var(--line);}
+
+  /* forms: offer letter / certificate */
+  .locked-notice{background:var(--surface); border:1px solid var(--teal); border-radius:10px; padding:28px; text-align:center;}
+  .locked-notice .id-chip{font-family:var(--mono); font-size:15px; color:var(--teal); margin:12px 0; padding:8px 16px; background:var(--surface-alt); border-radius:6px; display:inline-block;}
+  .file-drop{border:1px dashed var(--line); border-radius:8px; padding:20px; text-align:center; cursor:pointer; font-family:var(--mono); font-size:12.5px; color:var(--muted);}
+  .file-drop:hover{border-color:var(--teal); color:var(--teal);}
+  .file-drop.has-file{border-color:var(--teal); color:var(--teal);}
+
+  /* verify */
+  .verify-result{background:var(--surface); border:1px solid var(--teal); border-radius:10px; padding:28px; margin-top:24px;}
+  .verify-row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line); font-size:14px;}
+  .verify-row:last-child{border-bottom:none;}
+  .verify-row span:first-child{color:var(--muted); font-family:var(--mono); font-size:12.5px;}
+  .verify-badge{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:12px; color:var(--teal); background:rgba(63,221,192,.1); padding:6px 12px; border-radius:20px; margin-bottom:16px;}
+
+  .contact-row{display:flex; gap:20px; flex-wrap:wrap; margin-top:20px;}
+  .contact-card{flex:1; min-width:220px; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:20px;}
+
+  footer{border-top:1px solid var(--line); padding:36px 24px;}
+  .foot-inner{max-width:1120px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px;}
+  .foot-inner p{font-family:var(--mono); font-size:12px;}
+</style>
+</head>
+<body>
+
+<nav class="tabbar">
+  <div class="brand"><span class="dot"></span> ByteForge</div>
+  <div class="navsearch">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <input type="text" id="navSearchInput" placeholder="Search courses & internships...">
+  </div>
+  <div class="tabs">
+    <button class="tab active" data-view="home"><span class="dot"></span>Home</button>
+    <button class="tab" data-view="signup"><span class="dot"></span>Registration</button>
+    <button class="tab" data-view="internships"><span class="dot"></span>Internships</button>
+    <button class="tab" data-view="verify"><span class="dot"></span>Verify Certificate</button>
+    <button class="tab" data-view="contact"><span class="dot"></span>Contact Us</button>
+    <div class="more-wrap">
+      <button class="tab" id="moreBtn">More ▾</button>
+      <div class="more-menu" id="moreMenu">
+        <button data-view="courses">Courses</button>
+        <button data-view="refer">Refer &amp; Earn</button>
+        <button data-view="democert">Demo Certificate</button>
+      </div>
+    </div>
+  </div>
+  <div class="tab-spacer"></div>
+  <button class="tab" id="themeToggleBtn" title="Toggle dark/light theme" style="border-right:1px solid var(--line);">🌓</button>
+  <div id="navAuthArea"></div>
+</nav>
+
+<main>
+
+  <!-- HOME -->
+  <section class="view active" id="view-home">
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">welcome</div>
+        <h1>Ship real code.<br>Get hired for it.</h1>
+        <p>100+ project-based coding courses and internships built for students who want a portfolio, a verifiable certificate, and an offer letter — not just a video to watch.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-view="courses">Browse courses</button>
+          <button class="btn btn-ghost" data-view="internships">Browse internships</button>
+        </div>
+        <div class="stats">
+          <div class="stat"><b id="statCourses">100</b><span>courses</span></div>
+          <div class="stat"><b id="statInternships">100</b><span>internships</span></div>
+          <div class="stat"><b>4.7/5</b><span>avg. rating</span></div>
+        </div>
+      </div>
+      <div class="editor">
+        <div class="editor-bar"><span class="r"></span><span class="y"></span><span class="g"></span><span class="fname">career.js</span></div>
+        <div class="editor-body">
+          <div class="code-line"><span class="ln">1</span><span class="kw">const</span> student = <span class="fn">enroll</span>(<span class="str">"you"</span>);</div>
+          <div class="code-line"><span class="ln">2</span><span class="cm">// build real projects</span></div>
+          <div class="code-line"><span class="ln">3</span>student.<span class="fn">getOfferLetter</span>();</div>
+          <div class="code-line"><span class="ln">4</span>student.<span class="fn">completeInternship</span>();</div>
+          <div class="code-line"><span class="ln">5</span><span class="kw">return</span> student.<span class="fn">getVerifiedCertificate</span>();</div>
+          <div class="code-line"><span class="ln">6</span><span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-strip">
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg> Verified certificates (QR + ID lookup)</div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg> Secure payments via Razorpay</div>
+      <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Real offer letters, emailed instantly</div>
+    </div>
+
+    <div class="section-head" style="margin-top:36px;"><h2 style="margin:0;">Popular courses</h2><a data-view="courses">See all courses →</a></div>
+    <div class="grid" id="homeCourseGrid"></div>
+
+    <div class="section-head" style="margin-top:40px;"><h2 style="margin:0;">Popular internships</h2><a data-view="internships">See all internships →</a></div>
+    <div class="grid" id="homeInternshipGrid"></div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="view" id="view-courses">
+    <div class="eyebrow">catalog</div>
+    <h1 style="margin-bottom:8px; font-size:28px;">All courses</h1>
+    <p style="max-width:520px; margin-bottom:20px;">Every track ends in a shipped project and a completion certificate.</p>
+    <div class="filters">
+      <input type="text" id="courseFilterText" placeholder="Search by domain, name, or tag...">
+      <select id="courseFilterLevel"><option value="">All levels</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select>
+      <select id="courseFilterPrice"><option value="">Any price</option><option value="0-199">Under ₹200</option><option value="200-299">₹200 – ₹299</option><option value="300-9999">₹300+</option></select>
+      <select id="courseSortBy"><option value="">Sort: Relevance</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option></select>
+    </div>
+    <div class="grid" id="allCourseGrid"></div>
+    <div class="load-more-wrap"><button class="btn btn-ghost" id="courseLoadMoreBtn">Load more</button></div>
+  </section>
+
+  <!-- INTERNSHIPS -->
+  <section class="view" id="view-internships">
+    <div class="eyebrow">catalog</div>
+    <h1 style="margin-bottom:8px; font-size:28px;">All internships</h1>
+    <p style="max-width:520px; margin-bottom:20px;">1-month and 2-month tracks. Get a real offer letter, then a verifiable completion certificate.</p>
+    <div class="filters">
+      <input type="text" id="internFilterText" placeholder="Search by domain, name, or tag...">
+      <select id="internFilterDuration"><option value="">Any duration</option><option value="4 weeks">4 weeks (1-month)</option><option value="8 weeks">8 weeks (2-month)</option></select>
+      <select id="internFilterPrice"><option value="">Any price</option><option value="0-99">Under ₹100</option><option value="100-199">₹100 – ₹199</option><option value="200-9999">₹200+</option></select>
+      <select id="internSortBy"><option value="">Sort: Relevance</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option></select>
+    </div>
+    <div class="grid" id="allInternshipGrid"></div>
+    <div class="load-more-wrap"><button class="btn btn-ghost" id="internLoadMoreBtn">Load more</button></div>
+  </section>
+
+  <!-- ITEM DETAIL -->
+  <section class="view" id="view-item">
+    <div class="item-head">
+      <div>
+        <div class="eyebrow" id="itemType">course</div>
+        <h1 id="itemName" style="font-size:26px;">—</h1>
+        <div class="badges" id="itemTags" style="margin-top:10px;"></div>
+      </div>
+      <div style="text-align:right;">
+        <div class="price" style="font-size:22px;"><small id="itemMrp"></small><span id="itemPrice"></span></div>
+        <button class="btn btn-primary" style="margin-top:10px;" id="itemEnrollBtn">Enroll now</button>
+      </div>
+    </div>
+    <h2>Curriculum</h2>
+    <div id="itemCurriculum"></div>
+  </section>
+
+  <!-- LOGIN / SIGNUP -->
+  <section class="view" id="view-login">
+    <div class="panel">
+      <div class="prompt">ssh student@byteforge</div>
+      <h3 style="margin-bottom:20px;">Log in</h3>
+      <div id="loginAlert"></div>
+      <form id="loginForm">
+        <div class="field"><label>Email</label><input type="email" id="loginEmail" required></div>
+        <div class="field"><label>Password</label><input type="password" id="loginPass" required></div>
+        <button class="btn btn-primary btn-block" type="submit">Log in</button>
+      </form>
+      <p class="form-note"><a data-view="forgot">Forgot password?</a></p>
+      <p class="form-note">No account yet? <a data-view="signup">Sign up free</a></p>
+    </div>
+  </section>
+
+  <section class="view" id="view-signup">
+    <div class="panel">
+      <div class="prompt">./create-account.sh</div>
+      <h3 style="margin-bottom:20px;">Student Registration</h3>
+      <div id="signupAlert"></div>
+      <form id="signupForm">
+        <div class="field"><label>Full name</label><input type="text" id="suName" required></div>
+        <div class="field"><label>Email</label><input type="email" id="suEmail" required></div>
+        <div class="field"><label>Password</label><input type="password" id="suPass" minlength="6" required></div>
+        <div class="field" style="display:flex; align-items:flex-start; gap:8px;">
+          <input type="checkbox" id="suAgree" required style="width:auto; margin-top:3px;">
+          <label for="suAgree" style="margin:0; font-size:12.5px; color:var(--muted); line-height:1.5;">
+            I agree to the <a data-view="terms" style="color:var(--teal);">Terms of Service</a> and
+            <a data-view="privacy" style="color:var(--teal);">Privacy Policy</a>
+          </label>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Create account</button>
+      </form>
+      <p class="form-note">Already have an account? <a data-view="login">Log in</a></p>
+    </div>
+  </section>
+
+  <section class="view" id="view-forgot">
+    <div class="panel">
+      <div class="prompt">./forgot-password.sh</div>
+      <h3 style="margin-bottom:10px;">Reset your password</h3>
+      <p style="margin-bottom:16px; font-size:13px;">Enter your account email — we'll send you a reset link.</p>
+      <div id="forgotAlert"></div>
+      <form id="forgotForm">
+        <div class="field"><label>Email</label><input type="email" id="forgotEmail" required></div>
+        <button class="btn btn-primary btn-block" type="submit">Send reset link</button>
+      </form>
+      <p class="form-note"><a data-view="login">Back to log in</a></p>
+    </div>
+  </section>
+
+  <section class="view" id="view-resetpw">
+    <div class="panel">
+      <div class="prompt">./reset-password.sh</div>
+      <h3 style="margin-bottom:16px;">Set a new password</h3>
+      <div id="resetpwAlert"></div>
+      <form id="resetpwForm">
+        <div class="field"><label>New password</label><input type="password" id="resetpwNew" minlength="6" required></div>
+        <button class="btn btn-primary btn-block" type="submit">Update password</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="view" id="view-dashboard">
+    <div class="dash-head">
+      <div><div class="eyebrow">dashboard</div><h1 id="dashGreeting" style="font-size:26px;">Welcome back</h1></div>
+      <button class="btn btn-ghost" id="logoutBtn">Log out</button>
+    </div>
+    <div class="stat-cards">
+      <div class="stat-card"><b id="dashEnrolledCount">0</b><span>Enrolled</span></div>
+      <div class="stat-card"><b id="dashOfferCount">0</b><span>Offer letters</span></div>
+      <div class="stat-card"><b id="dashCertCount">0</b><span>Certificates</span></div>
+    </div>
+    <h2>My enrolled courses &amp; internships</h2>
+    <div id="enrolledList"></div>
+  </section>
+
+  <!-- CHECKOUT -->
+  <section class="view" id="view-checkout">
+    <div class="eyebrow">checkout</div>
+    <h1 style="font-size:26px; margin-bottom:24px;">Complete enrollment</h1>
+    <div class="checkout-grid">
+      <div class="panel panel-wide" style="margin:0;">
+        <div id="checkoutFormWrap">
+          <p style="margin-bottom:18px;">You'll be redirected to Razorpay's secure checkout to complete payment.</p>
+          <div id="checkoutAlert"></div>
+          <button class="btn btn-primary btn-block" id="payButton">Pay & Enroll</button>
+        </div>
+        <div id="checkoutSuccess" style="display:none;" class="success-box">
+          <div class="check">✓</div>
+          <h3>Enrollment confirmed</h3>
+          <p style="margin-top:8px;">Your content is now unlocked. Head to your dashboard to start learning.</p>
+          <button class="btn btn-primary" style="margin-top:20px;" data-view="dashboard">Go to dashboard</button>
+        </div>
+      </div>
+      <div class="order-summary" id="orderSummary"></div>
+    </div>
+  </section>
+
+  <!-- LEARN / VIEWER (payment-gated) -->
+  <section class="view" id="view-learn">
+    <div class="eyebrow" id="learnType">internship</div>
+    <h1 id="learnTitle" style="font-size:24px; margin-bottom:20px;">—</h1>
+    <div class="learn-layout">
+      <div class="learn-sidebar">
+        <div class="learn-progress-label"><span id="learnProgressPct">0%</span> Completed</div>
+        <div class="progress-bar" style="margin-bottom:18px;"><div class="progress-fill" id="learnProgressBar" style="width:0%"></div></div>
+        <div id="learnWeekList"></div>
+        <div class="learn-milestone" data-milestone="projects">🛠 View Projects</div>
+        <div class="learn-milestone" data-milestone="offer">📄 Generate Offer Letter</div>
+        <div class="learn-milestone" data-milestone="certificate">🏆 Claim Completion Certificate</div>
+      </div>
+      <div class="learn-main">
+        <div class="video-placeholder" id="learnVideoPlaceholder">
+          <div class="play-icon">▶</div>
+          <span id="learnCurrentLesson">Select a lesson to begin</span>
+          <small style="color:var(--muted); opacity:.7;">(video content — connect your own recording/embed link here)</small>
+        </div>
+        <div class="theory-content" id="learnTheoryContent" style="display:none; padding:26px; line-height:1.75; font-size:14.5px; color:var(--text); border-bottom:1px solid var(--line);"></div>
+        <div class="lesson-list-view">
+          <h3 id="learnWeekTitle">Week 1</h3>
+          <div id="learnLessonList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER LETTER FORM -->
+  <section class="view" id="view-offer">
+    <div class="eyebrow">step 1 of 2</div>
+    <h1 style="font-size:24px; margin-bottom:6px;">Generate Offer Letter</h1>
+    <p style="margin-bottom:24px;">Fill this in once — it locks after submission and can't be edited or resubmitted. Your offer letter is emailed to the address you enter below.</p>
+    <div id="offerFormArea"></div>
+  </section>
+
+  <!-- CERTIFICATE FORM -->
+  <section class="view" id="view-certificate">
+    <div class="eyebrow">step 2 of 2</div>
+    <h1 style="font-size:24px; margin-bottom:6px;">Claim Completion Certificate</h1>
+    <p style="margin-bottom:24px;">Requires your offer letter to already be generated. This also locks after one submission.</p>
+    <div id="certFormArea"></div>
+  </section>
+
+  <!-- VERIFY -->
+  <section class="view" id="view-verify">
+    <div class="eyebrow">verification</div>
+    <h1 style="font-size:26px; margin-bottom:10px;">Verify a certificate</h1>
+    <p style="max-width:480px; margin-bottom:24px;">Enter a certificate ID (or scan the QR code printed on the certificate) to confirm it's genuine and see the holder's completion details.</p>
+    <div class="panel panel-wide" style="margin:0;">
+      <div class="field"><label>Certificate ID</label><input type="text" id="verifyIdInput" placeholder="BF-CERT-2026-00001"></div>
+      <button class="btn btn-primary btn-block" id="verifyBtn">Verify</button>
+      <div id="verifyResultArea"></div>
+    </div>
+  </section>
+
+  <!-- REFER & EARN -->
+  <section class="view" id="view-refer">
+    <div class="eyebrow">refer & earn</div>
+    <h1 style="font-size:26px; margin-bottom:10px;">Invite a friend, both of you earn</h1>
+    <p style="max-width:520px; margin-bottom:24px;">Share your referral email with friends. Once they enroll in any paid course or internship, you'll both get credit toward your next enrollment. Reach out via the Contact page to claim referral credit for now — self-serve referral codes are coming soon.</p>
+    <div class="contact-row">
+      <div class="contact-card"><h3>1. Share</h3><p style="margin-top:8px;">Tell a friend about ByteForge and have them mention your name/email when they sign up.</p></div>
+      <div class="contact-card"><h3>2. They enroll</h3><p style="margin-top:8px;">Once they complete a paid enrollment, you're both eligible.</p></div>
+      <div class="contact-card"><h3>3. You both earn</h3><p style="margin-top:8px;">Credit is applied toward your next course or internship.</p></div>
+    </div>
+  </section>
+
+  <!-- DEMO CERTIFICATE -->
+  <section class="view" id="view-democert">
+    <div class="eyebrow">sample</div>
+    <h1 style="font-size:26px; margin-bottom:10px;">What your certificate looks like</h1>
+    <p style="max-width:520px; margin-bottom:24px;">Every certificate includes your name, college, register number, program dates, a unique certificate ID, and a QR code that anyone (including your college) can scan to instantly verify it on our Verify Certificate page.</p>
+    <div class="panel panel-wide" style="margin:0; text-align:center;">
+      <div style="border:2px solid var(--amber); border-radius:8px; padding:30px 20px;">
+        <div style="font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:2px;">BYTEFORGE</div>
+        <h2 style="margin:16px 0 6px;">Certificate of Completion</h2>
+        <p style="font-size:13px;">This is to certify that</p>
+        <h3 style="font-size:20px; margin:6px 0;">Your Name Here</h3>
+        <p style="font-size:13px;">of Your College has successfully completed the</p>
+        <h3 style="font-size:15px; margin:6px 0;">1-Month Full-Stack Web Development Internship</h3>
+        <p style="font-size:12.5px; margin-top:16px;">Certificate ID: BF-CERT-2026-00001 &nbsp;·&nbsp; QR code included on the real PDF</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" id="view-contact">
+    <div class="eyebrow">get in touch</div>
+    <h1 style="margin-bottom:10px;">Questions before you enroll?</h1>
+    <p style="max-width:480px;">Reach out and a mentor will get back to you within one business day.</p>
+    <div class="contact-row">
+      <div class="contact-card"><h3>Email</h3><p style="margin-top:8px;">bytefoge.courses@gmail.com</p></div>
+      <div class="contact-card"><h3>Phone</h3><p style="margin-top:8px;">+91 70927 79050</p></div>
+      <div class="contact-card"><h3>Support hours</h3><p style="margin-top:8px;">Mon–Sat, 10am–7pm IST</p></div>
+    </div>
+  </section>
+
+  <!-- LEGAL PAGES -->
+  <section class="view" id="view-terms">
+    <div class="eyebrow">legal</div>
+    <h1 style="margin-bottom:6px; font-size:26px;">Terms of Service</h1>
+    <p style="margin-bottom:24px;">Last updated: <span id="termsDate"></span></p>
+    <div class="panel panel-wide" style="margin:0; text-align:left; max-width:720px;">
+      <div style="font-size:14px; line-height:1.75; color:var(--text);">
+        <p><strong>1. Who we are</strong><br>ByteForge ("we", "us", "our") operates this website to provide online courses and internship programs to students. By creating an account, enrolling in a course/internship, or otherwise using this site, you agree to these Terms of Service.</p><br>
+        <p><strong>2. What we provide</strong><br>ByteForge provides self-paced online course/internship content, mentor-guided project work, an internship offer letter (generated from details you submit), and a completion certificate upon claiming it. Certificates and offer letters are independently verifiable on our Verify Certificate page using the certificate/offer ID or QR code.</p><br>
+        <p><strong>3. No guarantee of employment</strong><br>Completing a course or internship on ByteForge does not guarantee a job offer, placement, or any specific career outcome. Our programs are for skill-building and portfolio purposes.</p><br>
+        <p><strong>4. Accounts</strong><br>You're responsible for keeping your login credentials confidential and for all activity under your account. Provide accurate information when signing up and when submitting offer letter / certificate forms.</p><br>
+        <p><strong>5. Payments</strong><br>All payments are processed securely through Razorpay. Prices are listed in Indian Rupees (INR) and are inclusive of applicable taxes unless stated otherwise. See our <a data-view="refund" style="color:var(--teal);">Refund Policy</a> for cancellation terms.</p><br>
+        <p><strong>6. Offer letters &amp; certificates</strong><br>Offer letters and certificates are generated once, based on details (including dates and a typed digital signature) you submit yourself. Once submitted, these cannot be edited or regenerated for the same enrollment — you may download the same signed document again at any time. You are responsible for the accuracy of the information you submit; providing false information may result in your certificate being invalidated upon review.</p><br>
+        <p><strong>7. Acceptable use</strong><br>Don't attempt to access other students' accounts, interfere with the platform's operation, or misuse the certificate verification system to misrepresent completion of a program you did not complete.</p><br>
+        <p><strong>8. Changes</strong><br>We may update these terms from time to time; continued use of the site after changes means you accept the updated terms.</p><br>
+        <p><strong>9. Contact</strong><br>Questions about these terms: <a href="mailto:bytefoge.courses@gmail.com" style="color:var(--teal);">bytefoge.courses@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-privacy">
+    <div class="eyebrow">legal</div>
+    <h1 style="margin-bottom:6px; font-size:26px;">Privacy Policy</h1>
+    <p style="margin-bottom:24px;">Last updated: <span id="privacyDate"></span></p>
+    <div class="panel panel-wide" style="margin:0; text-align:left; max-width:720px;">
+      <div style="font-size:14px; line-height:1.75; color:var(--text);">
+        <p><strong>1. What we collect</strong><br>When you sign up: your name, email, and password (stored encrypted, never in plain text). When you enroll: payment confirmation via Razorpay (we don't store your card details — Razorpay handles this). When you generate an offer letter or certificate: your name, email, contact number, college name, register number, program dates, a typed digital signature, and a payment confirmation screenshot you upload.</p><br>
+        <p><strong>2. How we use it</strong><br>To create and manage your account, process enrollments, generate and email your offer letter/certificate, and let colleges or employers verify a certificate's authenticity via our public Verify Certificate page (which shows only your name, college, register number, program, and dates — never your email, phone, or password).</p><br>
+        <p><strong>3. Where it's stored</strong><br>Your data is stored in a MongoDB Atlas database. Emails are sent via Gmail SMTP. Payments are processed by Razorpay. We do not sell your personal data to third parties.</p><br>
+        <p><strong>4. Your rights</strong><br>You can request a copy of your data or ask us to delete your account by emailing <a href="mailto:bytefoge.courses@gmail.com" style="color:var(--teal);">bytefoge.courses@gmail.com</a>. Note: certificates already issued and verifiable publicly may need to remain queryable for verification integrity even after an account deletion request — we'll discuss specifics with you if this applies.</p><br>
+        <p><strong>5. Cookies &amp; local storage</strong><br>We use your browser's local storage to keep you logged in. We don't use third-party advertising trackers.</p><br>
+        <p><strong>6. Security</strong><br>Passwords are hashed (never stored in plain text). All traffic to this site is encrypted (HTTPS). While we take reasonable precautions, no online system is 100% immune to security incidents.</p><br>
+        <p><strong>7. Children's privacy</strong><br>Our services are intended for students of college/pre-professional age and above. If you believe a minor has provided us personal data without appropriate consent, contact us and we'll address it.</p><br>
+        <p><strong>8. Contact</strong><br>Privacy questions: <a href="mailto:bytefoge.courses@gmail.com" style="color:var(--teal);">bytefoge.courses@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-refund">
+    <div class="eyebrow">legal</div>
+    <h1 style="margin-bottom:6px; font-size:26px;">Refund &amp; Cancellation Policy</h1>
+    <p style="margin-bottom:24px;">Last updated: <span id="refundDate"></span></p>
+    <div class="panel panel-wide" style="margin:0; text-align:left; max-width:720px;">
+      <div style="font-size:14px; line-height:1.75; color:var(--text);">
+        <p><strong>1. General policy</strong><br>Once you've enrolled and paid for a course or internship, that enrollment is <strong>non-refundable</strong>, since content access unlocks immediately upon successful payment.</p><br>
+        <p><strong>2. When you ARE eligible for a refund</strong><br>If we fail to deliver what was promised — for example, your payment was successful but enrollment did not activate, or the course content is inaccessible due to an error on our end that we cannot resolve within a reasonable time — you are entitled to a full refund.</p><br>
+        <p><strong>3. How to request a refund</strong><br>Email <a href="mailto:bytefoge.courses@gmail.com" style="color:var(--teal);">bytefoge.courses@gmail.com</a> with your registered email address, the course/internship name, and a description of the issue. We aim to respond within 2 business days.</p><br>
+        <p><strong>4. Processing time</strong><br>Approved refunds are issued to your original payment method via Razorpay and typically reflect within 5–7 business days, depending on your bank/card issuer.</p><br>
+        <p><strong>5. Duplicate payments</strong><br>If you're accidentally charged twice for the same enrollment, contact us with both payment references and we'll refund the duplicate charge in full.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMIN DASHBOARD (owner only) -->
+  <section class="view" id="view-admin">
+    <div class="dash-head">
+      <div><div class="eyebrow">owner access</div><h1 style="font-size:26px;">Admin Dashboard</h1></div>
+      <button class="btn btn-ghost" id="adminBackupBtn">⬇ Download backup (JSON)</button>
+    </div>
+    <div class="stat-cards" id="adminStatCards"></div>
+    <h2>All students</h2>
+    <div class="filters"><input type="text" id="adminFilterText" placeholder="Search by name or email..."></div>
+    <div id="adminStudentList"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <p>© 2026 ByteForge. Built to ship, not just to certify.</p>
+    <p>
+      <span data-view="home" style="cursor:pointer;">home</span> ·
+      <span data-view="courses" style="cursor:pointer;">courses</span> ·
+      <span data-view="internships" style="cursor:pointer;">internships</span> ·
+      <span data-view="verify" style="cursor:pointer;">verify-certificate</span> ·
+      <span data-view="contact" style="cursor:pointer;">contact</span> ·
+      <span data-view="terms" style="cursor:pointer;">terms</span> ·
+      <span data-view="privacy" style="cursor:pointer;">privacy</span> ·
+      <span data-view="refund" style="cursor:pointer;">refund-policy</span>
+    </p>
+  </div>
+</footer>
+
+
+<script src="/app.js"></script>
+</body>
+</html>
